@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NoImage from '../assets/no-image.png';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import ShowThumbnail from './ShowThumbnail';
@@ -36,5 +37,10 @@ const ShowInfo = ({ show }) => (
     </div>
   </StyledShowInfo>
 );
+
+ShowInfo.propTypes = {
+  show: PropTypes.object,
+  directors: PropTypes.array,
+};
 
 export default ShowInfo;

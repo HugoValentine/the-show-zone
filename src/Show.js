@@ -18,9 +18,10 @@ const Show = ({ showId }) => {
     <>
       <Navigation show={show.original_name} />
       <ShowInfo show={show} />
-      <ShowInfoBar />
-      <Grid>
-        <Actors />
+      <Grid header="Actors">
+        {show.actors.map((actor) => (
+          <Actors key={actor.credit_id} actor={actor} />
+        ))}
       </Grid>
     </>
   );

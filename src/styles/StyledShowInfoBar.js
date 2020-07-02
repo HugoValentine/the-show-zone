@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledMovieInfoBar = styled.div`
+export const StyledShowInfoBar = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
@@ -12,21 +12,21 @@ export const StyledMovieInfoBar = styled.div`
   font-family: 'Abel', sans-serif;
   font-size: 20px;
 
-  .movieinfobar-content {
+  .showinfobar-content {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
     color: #fff;
   }
 
-  .movieinfobar-content-col {
+  .showinfobar-content-col {
     float: left;
     width: 33.33%;
     box-sizing: border-box;
     padding: 10px 20px 0 0;
   }
 
-  .movieinfobar-info {
+  .showinfobar-info {
     padding: 5px 0 0 10px;
     float: left;
   }
