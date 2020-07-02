@@ -11,15 +11,17 @@ const Show = ({ showId }) => {
   const [show, loading, error] = useShowFetch(showId);
   console.log('Show:', show);
 
+  if (error) return <div>Something went wrong, it's not you, it's me</div>;
+  if (loading) return <Spinner />;
+
   return (
     <>
-      <Navigation />
-      <ShowInfo />
+      <Navigation show={show.original_name} />
+      <ShowInfo show={show} />
       <ShowInfoBar />
       <Grid>
         <Actors />
       </Grid>
-      <Spinner />
     </>
   );
 };

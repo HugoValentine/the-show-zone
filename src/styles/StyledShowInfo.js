@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../../config';
+import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 
-export const StyledMovieInfo = styled.div`
-  background: ${props =>
+export const StyledShowInfo = styled.div`
+  background: ${(props) =>
     props.backdrop
       ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${props.backdrop}')`
       : '#000'};
@@ -13,7 +13,7 @@ export const StyledMovieInfo = styled.div`
   box-sizing: border-box;
   animation: animateMovieinfo 1s;
 
-  .movieinfo-content {
+  .showinfo-content {
     max-width: 1280px;
     min-height: 450px;
     margin: 0 auto;
@@ -22,7 +22,7 @@ export const StyledMovieInfo = styled.div`
     position: relative;
   }
 
-  .movieinfo-thumb {
+  .showinfo-thumb {
     width: 300px;
     float: left;
 
@@ -31,7 +31,7 @@ export const StyledMovieInfo = styled.div`
     }
   }
 
-  .movieinfo-text {
+  .showinfo-text {
     font-family: Arial, Helvetica, sans-serif;
     padding: 40px;
     color: #fff;
