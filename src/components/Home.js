@@ -16,6 +16,7 @@ import { useHomeFetch } from './hooks/useHomeFetch';
 import SearchBar from './SearchBar';
 
 const Home = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const [
     {
       state: { shows, currentPage, totalPages, heroImage },
@@ -23,8 +24,7 @@ const Home = () => {
       error,
     },
     fetchShows,
-  ] = useHomeFetch();
-  const [searchTerm, setSearchTerm] = useState('');
+  ] = useHomeFetch(searchTerm);
 
   const searchShows = (search) => {
     const endpoint = search ? SEARCH_ENDPOINT + search : SEARCH_POPULAR;

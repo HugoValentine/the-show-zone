@@ -33,7 +33,17 @@ export const useShowFetch = (showId) => {
   }, [showId]);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    if (localStorage[showId]) {
+      setState(JSON.parse(localStorage[showId]));
+      setLoading(false);
+    } else {
+      fetchData();
+    }
+  }, [fetchData, showId]);
+
+  useEffect(() => {
+    localStorage.setItem(showId, JSON.stringify(state));
+  }, [showId, state]);
+
   return [state, loading, error];
 };

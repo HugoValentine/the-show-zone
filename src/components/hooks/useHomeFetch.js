@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { SEARCH_POPULAR } from '../../config';
 
-export const useHomeFetch = () => {
+export const useHomeFetch = (searchTerm) => {
   const [state, setState] = useState({ shows: [] });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -34,8 +34,22 @@ export const useHomeFetch = () => {
   };
   //https://api.themoviedb.org/3/tv/popular?api_key=603f922cff9526b02ebc5063f7284be7
   useEffect(() => {
-    fetchShows(SEARCH_POPULAR);
+    if (sessionStorage.homeState) {
+      console.log('Grabbing from Session Storage');
+      setState(JSON.parse(sessionStorage.homeState));
+      setLoading(false);
+    } else {
+      console.log('Grabbing from API|');
+      fetchShows(SEARCH_POPULAR);
+    }
   }, []);
+
+  useEffect(() => {
+    if (!searchTerm) {
+      console.log('Writing to session storage');
+      sessionStorage.setItem('homeState', JSON.stringify(state));
+    }
+  }, [searchTerm, state]);
 
   return [{ state, loading, error }, fetchShows];
 };
