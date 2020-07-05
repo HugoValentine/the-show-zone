@@ -1,22 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledSidebar = styled.div`
-  .container {
-    background-color: '#fffff';
-    width: 150px;
-    margin: 0;
-    padding-top: 20px;
-    z-index: 1;
-    top: 0;
-  }
-  .menuItemList {
-    margin-top: 50px;
-  }
-  .seperator {
-    border-top: '5px solid #DFE0EB';
-    margin-top: 20px;
-    margin-bottom: 16;
-    opacity: 0.06;
-    width: 50px;
-  }
+  width: 200px;
+  position: absolute;
+  padding-top: 20px;
+  flex-direction: column;
+  border-right: 2px solid;
+  border-radius: 2;
+  border-color: #cdcdcd;
+  transition: 0.8s ease;
 `;

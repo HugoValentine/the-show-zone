@@ -95,7 +95,7 @@ class Home extends Component {
       totalPages,
       loading,
       error,
-      selectedItem,
+      selectedItem = 'Popular',
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
@@ -110,6 +110,10 @@ class Home extends Component {
         />  */}
 
         {/* <SearchBar callback={this.searchShows} /> */}
+        <Sidebar
+          selectedItem={selectedItem}
+          onChange={(selectedItem) => this.setState({ selectedItem })}
+        />
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const StyledContainer = styled.div`
   height: 100%;
   /* max-width: 1900px; */
 `;
@@ -9,24 +9,13 @@ export const StyledGrid = styled.div`
   margin-left: 200px;
   padding: 0 20px;
   h1 {
-    font-family: 'Abel', sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 42px;
 
     @media screen and (max-width: 768px) {
       font-size: 22px;
     }
   }
-`;
-
-export const StyledSidebar = styled.div`
-  width: 200px;
-  position: absolute;
-  padding-top: 20px;
-  flex-direction: column;
-  border-right: 2px solid;
-  border-radius: 2;
-  border-color: #cdcdcd;
-  transition: 0.8s ease;
 `;
 
 export const StyledGridContent = styled.div`
