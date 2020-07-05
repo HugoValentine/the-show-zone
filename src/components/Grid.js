@@ -1,12 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledGrid, StyledGridContent } from '../styles/StyledGrid';
+import {
+  Container,
+  StyledGrid,
+  StyledGridContent,
+  StyledSidebar,
+} from '../styles/StyledGrid';
+import MenuItem from './MenuItem';
 
 const Grid = ({ header, children }) => (
-  <StyledGrid>
-    <h1>{header}</h1>
-    <StyledGridContent>{children}</StyledGridContent>
-  </StyledGrid>
+  <Container>
+    <StyledSidebar>
+      <h3>Popular</h3>
+      <h3>Popular</h3>
+      <h3>Popular</h3>
+      <h3>Popular</h3>
+    </StyledSidebar>
+    <StyledGrid>
+      <h1>{header}</h1>
+      <StyledGridContent>{children}</StyledGridContent>
+    </StyledGrid>
+  </Container>
 );
 
 Grid.propTypes = {

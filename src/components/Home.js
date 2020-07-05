@@ -13,6 +13,7 @@ import Spinner from './Spinner';
 import LoadMore from './LoadMore';
 import NoImage from '../assets/no-image.png';
 import SearchBar from './SearchBar';
+import Sidebar from './Sidebar';
 
 class Home extends Component {
   state = {
@@ -20,6 +21,7 @@ class Home extends Component {
     searchTerm: '',
     loading: true,
     error: false,
+    selectedItem: 'Popular',
   };
 
   fetchShows = async (endpoint) => {
@@ -93,6 +95,7 @@ class Home extends Component {
       totalPages,
       loading,
       error,
+      selectedItem,
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
@@ -100,12 +103,13 @@ class Home extends Component {
 
     return (
       <>
-        <HeroImage
+        {/* <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`}
           title={heroImage.original_name}
           text={heroImage.overview}
-        />
-        <SearchBar callback={this.searchShows} />
+        />  */}
+
+        {/* <SearchBar callback={this.searchShows} /> */}
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail
@@ -121,7 +125,6 @@ class Home extends Component {
             />
           ))}
         </Grid>
-
         {loading && <Spinner />}
         {currentPage < totalPages && !loading && (
           <LoadMore text="Load More" callback={this.loadMoreShows} />

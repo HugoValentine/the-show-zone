@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  height: 100%;
+  /* max-width: 1900px; */
+`;
+
 export const StyledGrid = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
+  margin-left: 200px;
   padding: 0 20px;
   h1 {
     font-family: 'Abel', sans-serif;
@@ -14,11 +18,22 @@ export const StyledGrid = styled.div`
   }
 `;
 
+export const StyledSidebar = styled.div`
+  width: 200px;
+  position: absolute;
+  padding-top: 20px;
+  flex-direction: column;
+  border-right: 2px solid;
+  border-radius: 2;
+  border-color: #cdcdcd;
+  transition: 0.8s ease;
+`;
+
 export const StyledGridContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(8, minmax(100px, 1fr));
   grid-gap: 40px;
-  position: relative;
+  /* position: relative; */
 
   .grid-element {
     animation: animateGrid 0.5s;

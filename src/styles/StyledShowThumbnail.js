@@ -7,10 +7,10 @@ export const StyledShowThumbnail = styled.div`
     /* max-height: 350px; */
     transition: all 0.3s;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
 
     :hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     /* @media screen and (max-width: 1024px) {
