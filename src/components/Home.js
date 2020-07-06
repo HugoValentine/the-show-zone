@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   SEARCH_ENDPOINT,
   SEARCH_POPULAR,
@@ -15,7 +15,7 @@ import NoImage from '../assets/no-image.png';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
 
-class Home extends Component {
+class Home extends React.Component {
   state = {
     shows: [],
     searchTerm: '',
@@ -59,13 +59,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    if (sessionStorage.homeState) {
-      console.log('Grabbing from Session Storage');
-      this.setState(JSON.parse(sessionStorage.homeState));
-    } else {
-      console.log('Grabbing from API|');
-      this.fetchShows(SEARCH_POPULAR);
-    }
+    this.fetchShows(SEARCH_POPULAR);
   }
 
   searchShows = (search) => {
@@ -95,7 +89,7 @@ class Home extends Component {
       totalPages,
       loading,
       error,
-      selectedItem = 'Popular',
+      selectedItem,
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;

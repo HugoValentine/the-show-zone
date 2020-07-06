@@ -9,7 +9,7 @@ function MenuItem(props) {
     <StyledMenuItem {...otherProps}>
       {/* <Icon fill={active && '#DDE2FF'} opacity={!active && '0.4'} /> */}
       {active && <div className="activeBar"></div>}
-      <a className={'tittle' + active + 'activeTitle'}>{title}</a>
+      <a className={active && 'activeTitle'}>{title}</a>
     </StyledMenuItem>
   );
 }
