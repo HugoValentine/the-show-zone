@@ -6,7 +6,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledGrid = styled.div`
-  margin-left: 200px;
+  margin-left: 250px;
+  margin-right: 50px;
   padding: 0 20px;
   h1 {
     font-family: Montserrat, sans-serif;
@@ -20,8 +21,8 @@ export const StyledGrid = styled.div`
 
 export const StyledGridContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(8, minmax(100px, 1fr));
-  grid-gap: 40px;
+  grid-template-columns: repeat(5, minmax(10px, 1fr));
+  grid-gap: 70px;
   /* position: relative; */
 
   .grid-element {

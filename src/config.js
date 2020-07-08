@@ -4,6 +4,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SEARCH_ENDPOINT = `${API_URL}search/tv?api_key=${API_KEY}&query=`;
 const SEARCH_POPULAR = `${API_URL}tv/popular?api_key=${API_KEY}`;
+const SEARCH_BY_GENRE = `${API_URL}discover/tv?api_key=${API_KEY}&with_genres=`;
 
 // Sizes: w300, w780, w1280, original
 const BACKDROP_SIZE = 'w1280';
@@ -18,6 +19,7 @@ export {
   IMAGE_BASE_URL,
   SEARCH_ENDPOINT,
   SEARCH_POPULAR,
+  SEARCH_BY_GENRE,
   BACKDROP_SIZE,
   POSTER_SIZE,
 };
