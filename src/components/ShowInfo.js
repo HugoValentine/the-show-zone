@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoImage from '../assets/no-image.png';
+import NoImage from '../assets/nothing.svg';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import ShowThumbnail from './ShowThumbnail';
 import { StyledShowInfo } from '../styles/StyledShowInfo';

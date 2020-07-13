@@ -1,52 +1,77 @@
 import styled from 'styled-components';
 
 export const StyledSearchBar = styled.div`
-  width: 100%;
-  height: 105px;
-  background: #1c1c1c;
-  padding: 25px 20px 0px 20px;
-  box-sizing: border-box;
-  color: #fff;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-top: 20px;
+  margin-right: 50px;
 `;
 
 export const StyledSearchBarContent = styled.div`
-  max-width: 1280px;
-  width: 100%;
-  height: 55px;
-  background: #353535;
-  margin: 0 auto;
-  border-radius: 40px;
-  position: relative;
-  color: #fff;
-
-  .fa-search {
-    position: absolute;
-    left: 20px;
-    top: 12px;
-    color: #fff;
-    z-index: 1000;
-  }
-
-  input {
-    font-family: 'Abel', sans-serif;
-    font-size: 28px;
-    position: absolute;
-    left: 0px;
-    margin: 8px 0;
-    padding: 0 0 0 60px;
-    border: 0;
-    width: 95%;
-    background: transparent;
-    height: 40px;
-    color: #fff;
-    box-sizing: border-box;
-
-    :focus {
-      outline: none;
+  .search-box {
+    border: solid 3px black;
+    display: inline-block;
+    position: relative;
+    border-radius: 40px;
+    input[type='text'] {
+      font-family: Raleway, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      width: 20px;
+      height: 30px;
+      padding: 5px 20px 5px 10px;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 50px;
+      transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+      &:focus {
+        outline: none;
+      }
+      &:focus,
+      &:not(:placeholder-shown) {
+        width: 300px;
+        transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+        + span {
+          bottom: 13px;
+          right: 10px;
+          transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+        }
+        + span:after {
+          top: 0;
+          right: 10px;
+          opacity: 1;
+          transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms,
+            opacity 300ms ease 1100ms;
+        }
+      }
     }
-
-    @media screen and (max-width: 720px) {
-      font-size: 28px;
+    span {
+      width: 20px;
+      height: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -13px;
+      right: -15px;
+      transition: bottom 300ms ease-out 300ms, right 300ms ease-out 300ms;
+      &:before,
+      &:after {
+        content: '';
+        height: 25px;
+        border-left: solid 3px black;
+        position: absolute;
+        transform: rotate(-45deg);
+      }
+      &:after {
+        transform: rotate(45deg);
+        opacity: 0;
+        top: -20px;
+        right: -10px;
+        transition: top 300ms ease-out, right 300ms ease-out,
+          opacity 300ms ease-out;
+      }
     }
   }
 `;

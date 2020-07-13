@@ -11,9 +11,10 @@ import Grid from './Grid';
 import ShowThumbnail from './ShowThumbnail';
 import Spinner from './Spinner';
 import LoadMore from './LoadMore';
-import NoImage from '../assets/no-image.png';
+import NoImage from '../assets/nothing.svg';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
+import NotFound from './NotFound';
 
 class Home extends React.Component {
   state = {
@@ -48,7 +49,6 @@ class Home extends React.Component {
         }),
         () => {
           if (!searchTerm) {
-            console.log('Writing to session storage');
             sessionStorage.setItem('homeState', JSON.stringify(this.state));
           }
         }
@@ -93,7 +93,7 @@ class Home extends React.Component {
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
-    if (!shows[0]) return <Spinner />;
+    //if (!shows[0]) return <NotFound />;
 
     return (
       <>
@@ -103,11 +103,11 @@ class Home extends React.Component {
           text={heroImage.overview}
         />  */}
 
-        {/* <SearchBar callback={this.searchShows} /> */}
-        <Sidebar
+        <SearchBar callback={this.searchShows} />
+        {/* <Sidebar
           selectedItem={selectedItem}
           onChange={(selectedItem) => this.setState({ selectedItem })}
-        />
+        /> */}
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail

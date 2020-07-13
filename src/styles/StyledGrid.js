@@ -6,8 +6,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledGrid = styled.div`
-  margin-left: 250px;
-  margin-right: 50px;
+  margin: 0 50px;
   padding: 0 20px;
   h1 {
     font-family: Montserrat, sans-serif;
