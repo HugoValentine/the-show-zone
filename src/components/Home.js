@@ -15,6 +15,11 @@ import NoImage from '../assets/nothing.svg';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
 import NotFound from './NotFound';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as fasFaStar } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+library.add(fasFaStar, farFaStar);
 
 class Home extends React.Component {
   state = {
@@ -111,6 +116,7 @@ class Home extends React.Component {
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail
+              show={show}
               key={show.id}
               clickable
               image={
@@ -119,7 +125,6 @@ class Home extends React.Component {
                   : NoImage
               }
               showId={show.id}
-              showName={show.original_name}
             />
           ))}
         </Grid>

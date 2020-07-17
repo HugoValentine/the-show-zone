@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
     return (
       <StyledSearchBar>
         <StyledSearchBarContent>
-          <div class="search-box">
+          <div className="search-box">
             <FontAwesome className="fa-search" name="search" size="2x" />
             <input
               type="text"

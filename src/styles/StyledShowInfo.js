@@ -11,7 +11,7 @@ export const StyledShowInfo = styled.div`
   width: 100%;
   padding: 40px 20px;
   box-sizing: border-box;
-  animation: animateMovieinfo 1s;
+  animation: animateShowinfo 1s;
 
   .showinfo-content {
     max-width: 1280px;
@@ -20,10 +20,17 @@ export const StyledShowInfo = styled.div`
     background: rgb(0, 0, 0, 0.7);
     border-radius: 20px;
     position: relative;
+    height: 5rem;
   }
 
   .showinfo-thumb {
-    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    box-shadow: 0rem 2rem 5rem rgba(0, 0, 0, 0.2);
+    transition: all 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
     float: left;
 
     @media screen and (max-width: 768px) {
@@ -91,7 +98,7 @@ export const StyledShowInfo = styled.div`
     height: auto;
   }
 
-  @keyframes animateMovieinfo {
+  @keyframes animateShowinfo {
     from {
       opacity: 0;
     }
@@ -99,4 +106,10 @@ export const StyledShowInfo = styled.div`
       opacity: 1;
     }
   }
+`;
+
+export const ShowImg = styled.img`
+  height: 100%;
+  border-radius: 0.8rem;
+  box-shadow: 0rem 2rem 5rem rgba(0, 0, 0, 0.2);
 `;

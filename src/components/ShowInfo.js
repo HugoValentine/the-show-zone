@@ -1,21 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import NoImage from '../assets/nothing.svg';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import ShowThumbnail from './ShowThumbnail';
-import { StyledShowInfo } from '../styles/StyledShowInfo';
+import { StyledShowInfo, ShowImg } from '../styles/StyledShowInfo';
 
 const ShowInfo = ({ show }) => (
   <StyledShowInfo backdrop={show.backdrop_path}>
     <div className="showinfo-content">
       <div className="showinfo-thumb">
-        <ShowThumbnail
-          image={
+        <ShowImg
+          src={
             show.poster_path
               ? `${IMAGE_BASE_URL}${POSTER_SIZE}${show.poster_path}`
               : NoImage
           }
-          clickable={false}
+          alt="poster"
         />
       </div>
       <div className="showinfo-text">
@@ -37,10 +36,5 @@ const ShowInfo = ({ show }) => (
     </div>
   </StyledShowInfo>
 );
-
-ShowInfo.propTypes = {
-  show: PropTypes.object,
-  directors: PropTypes.array,
-};
 
 export default ShowInfo;
