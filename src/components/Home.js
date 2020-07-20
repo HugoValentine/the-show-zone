@@ -6,20 +6,13 @@ import {
   BACKDROP_SIZE,
   POSTER_SIZE,
 } from '../config';
-import HeroImage from './HeroImage';
 import Grid from './Grid';
 import ShowThumbnail from './ShowThumbnail';
 import Spinner from './Spinner';
 import LoadMore from './LoadMore';
 import NoImage from '../assets/nothing.svg';
 import SearchBar from './SearchBar';
-import Sidebar from './Sidebar';
 import NotFound from './NotFound';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons';
-import { faStar as fasFaStar } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
-library.add(fasFaStar, farFaStar);
 
 class Home extends React.Component {
   state = {
@@ -98,21 +91,12 @@ class Home extends React.Component {
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
-    //if (!shows[0]) return <NotFound />;
+    if (!shows[0]) return <NotFound />;
 
     return (
       <>
-        {/* <HeroImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`}
-          title={heroImage.original_name}
-          text={heroImage.overview}
-        />  */}
-
         <SearchBar callback={this.searchShows} />
-        {/* <Sidebar
-          selectedItem={selectedItem}
-          onChange={(selectedItem) => this.setState({ selectedItem })}
-        /> */}
+
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail
