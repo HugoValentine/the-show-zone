@@ -91,7 +91,7 @@ class Home extends React.Component {
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
-    if (!shows[0]) return <NotFound />;
+    // if (!shows[0]) return <NotFound />;
 
     return (
       <>
