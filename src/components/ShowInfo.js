@@ -28,10 +28,6 @@ const ShowInfo = ({ show }) => (
             <div className="score">{show.vote_average}</div>
           </div>
         </div>
-
-        <div className="director">
-          <h3>DIRECTOR{show.directors.length > 1 ? 'S' : ''}</h3>
-        </div>
       </div>
     </div>
   </StyledShowInfo>
