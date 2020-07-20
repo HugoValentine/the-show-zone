@@ -79,6 +79,10 @@ export const MovieWrapper = styled.div`
     box-shadow: 0rem 2rem 5rem rgba(0, 0, 0, 0.25);
     transition: all 100ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
+  @media screen and (max-width: 375px) {
+    max-height: 450px;
+  }
 `;
 
 export const MovieImg = styled.img`
@@ -113,9 +117,16 @@ export const DetailsWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const RatingsWrapper = styled.div`
+  div[style] {
+    display: flex !important;
+  }
   display: flex;
   position: relative;
   align-items: center;

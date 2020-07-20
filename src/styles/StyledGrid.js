@@ -12,9 +12,13 @@ export const StyledGrid = styled.div`
     font-family: Montserrat, sans-serif;
     font-size: 42px;
 
-    @media screen and (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
       font-size: 22px;
     }
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    padding-top: 12px;
   }
 `;
 

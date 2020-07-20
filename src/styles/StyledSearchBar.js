@@ -6,6 +6,10 @@ export const StyledSearchBar = styled.div`
   align-items: center;
   padding-top: 20px;
   margin-right: 50px;
+
+  @media only screen and (max-width: 768px) {
+    display: grid;
+  }
 `;
 
 export const StyledSearchBarContent = styled.div`
@@ -24,14 +28,14 @@ export const StyledSearchBarContent = styled.div`
       border: none;
       box-sizing: border-box;
       border-radius: 50px;
-      transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+      transition: width 500ms cubic-bezier(0.5, -0.5, 0.5, 0.5);
       &:focus {
         outline: none;
       }
       &:focus,
       &:not(:placeholder-shown) {
-        width: 300px;
-        transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+        width: 250px;
+        transition: width 500ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
         + span {
           bottom: 13px;
           right: 10px;
