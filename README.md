@@ -1,6 +1,8 @@
 ## Welcome to The Show Zone
 
-This project is mainly to display current popular shows as well as to help you find your next favourite tv show.
+This project is mainly to display the current popular shows as well as to help you find your next favourite tv show.
+
+![screenshot](assets/screenshot.png)
 
 ## If you want to clone it and play around with it your self, first:
 
