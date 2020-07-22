@@ -2,7 +2,7 @@
 
 This project is mainly to display the current popular shows as well as to help you find your next favourite tv show.
 
-![screenshot](assets/screenshot.png)
+![](./src/assets/screenshot.png)
 
 ## If you want to clone it and play around with it your self, first:
 
