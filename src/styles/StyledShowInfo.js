@@ -65,8 +65,8 @@ export const StyledShowInfo = styled.div`
       padding: 10px 10px;
       background: rgb(0, 0, 0, 0.7);
       border-radius: 0.8rem;
-      /* width: 20rem;
-      margin: 20px 20px; */
+      height: 100%;
+      overflow-y: auto;
     }
 
     h1 {
