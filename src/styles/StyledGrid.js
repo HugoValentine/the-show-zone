@@ -53,7 +53,7 @@ export const StyledGridContent = styled.div`
     grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
 
-  @media screen and (max-width: 375px) {
+  /* @media screen and (max-width: 375px) {
     grid-template-columns: repeat(1, 1fr);
-  }
+  } */
 `;
