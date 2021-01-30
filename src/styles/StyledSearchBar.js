@@ -4,8 +4,8 @@ export const StyledSearchBar = styled.div`
   display: flex;
   justify-content: right;
   align-items: center;
-  padding-top: 20px;
   margin-right: 50px;
+  float: right;
 
   @media only screen and (max-width: 768px) {
     display: grid;
