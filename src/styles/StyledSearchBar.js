@@ -7,8 +7,10 @@ export const StyledSearchBar = styled.div`
   margin-right: 50px;
   float: right;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 976px) {
     display: grid;
+    padding-top: 20px;
+    float: none;
   }
 `;
 
