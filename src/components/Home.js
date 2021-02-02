@@ -3,16 +3,20 @@ import {
   SEARCH_ENDPOINT,
   SEARCH_POPULAR,
   IMAGE_BASE_URL,
+  SEARCH_TRAILER,
+  TV_ID,
   BACKDROP_SIZE,
   POSTER_SIZE,
 } from '../config';
 import Grid from './Grid';
+import ShowInfo from './ShowInfo';
 import ShowThumbnail from './ShowThumbnail';
 import Spinner from './Spinner';
 import LoadMore from './LoadMore';
 import NoImage from '../assets/nothing.svg';
 import SearchBar from './SearchBar';
 import NotFound from './NotFound';
+import { getShow, getTrailer } from '../actions/index';
 
 class Home extends React.Component {
   state = {
@@ -21,6 +25,10 @@ class Home extends React.Component {
     loading: true,
     error: false,
     selectedItem: 'Popular',
+  };
+
+  fetchThis = () => {
+    console.log(getTrailer(69050));
   };
 
   fetchShows = async (endpoint) => {
@@ -94,8 +102,8 @@ class Home extends React.Component {
 
     return (
       <>
+        <button onClick={this.fetchThis}>here</button>
         <SearchBar callback={this.searchShows} />
-
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (
             <ShowThumbnail
@@ -111,9 +119,10 @@ class Home extends React.Component {
             />
           ))}
         </Grid>
+
         {loading && <Spinner />}
         {currentPage < totalPages && !loading && (
-          <LoadMore text="Load More" callback={this.loadMoreShows} />
+          <LoadMore text='Load More' callback={this.loadMoreShows} />
         )}
       </>
     );

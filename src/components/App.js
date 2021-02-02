@@ -1,18 +1,20 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import { GlobalStyle } from '../styles/GlobalStyle';
+// import { GlobalStyle } from '../styles/GlobalStyle';
+import { Layout } from '../components/theme/index';
 import Home from './Home';
 import Show from '../Show';
 import NotFound from './NotFound';
 
 const App = () => (
   <>
-    <Router>
-      <Home path="/" />
-      <Show path="/:showId" />
-      <NotFound default />
-    </Router>
-    <GlobalStyle />
+    <Layout>
+      <Router>
+        <Home path='/' />
+        <Show path='/:showId' />
+        <NotFound default />
+      </Router>
+    </Layout>
   </>
 );
 

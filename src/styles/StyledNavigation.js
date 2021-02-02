@@ -7,6 +7,7 @@ export const StyledNavigation = styled.div`
   height: 70px;
   background: #fff;
   color: #fff;
+  box-shadow: 0rem 0rem 0.1rem rgba(0, 0, 0, 0.2);
 
   .navigation-content {
     max-width: 1280px;
@@ -15,7 +16,6 @@ export const StyledNavigation = styled.div`
     width: 100%;
 
     p {
-      font-family: 'Abel', sans-serif;
       font-size: 22px;
       float: left;
       color: #37474f;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import LazyLoad from 'react-lazyload';
 import Rating from './Rating';
+
 import {
   StyledShowThumbnail,
   DetailsWrapper,
@@ -19,10 +20,10 @@ const ShowThumbnail = ({ image, show, showId, clickable }) => (
       {clickable ? (
         // Sending the showId as a parameter
         <Link to={`/${showId}`}>
-          <MovieImg className="Clickable" src={image} alt="ShowThumbnail" />
+          <MovieImg className='Clickable' src={image} alt='ShowThumbnail' />
         </Link>
       ) : (
-        <MovieImg src={image} alt="ShowThumbnail" />
+        <MovieImg src={image} alt='ShowThumbnail' />
       )}
       {
         <DetailsWrapper>

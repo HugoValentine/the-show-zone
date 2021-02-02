@@ -21,7 +21,6 @@ export const StyledSearchBarContent = styled.div`
     position: relative;
     border-radius: 40px;
     input[type='text'] {
-      font-family: Raleway, sans-serif;
       font-size: 20px;
       font-weight: bold;
       width: 20px;

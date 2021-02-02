@@ -2,45 +2,34 @@ import styled from 'styled-components';
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 
 export const StyledShowInfo = styled.div`
-  background: ${(props) =>
+  /* background: ${(props) =>
     props.backdrop
       ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${props.backdrop}')`
-      : '#000'};
+      : '#fff'}; */
   background-size: cover !important;
   background-position: center !important;
   width: 100%;
   padding: 40px 20px;
   box-sizing: border-box;
   animation: animateShowinfo 1s;
+  display: flex;
 
-  .showinfo-content {
-    max-width: 1280px;
-    min-height: 450px;
-    margin: 0 auto;
-    background: rgb(0, 0, 0, 0.7);
-    border-radius: 20px;
-    position: relative;
-    height: 5rem;
-
-    @media (max-width: 976px) {
-      min-height: 250px;
-      background: none;
-    }
+  @media (max-width: 976px) {
+    min-height: 250px;
+    background: none;
+    flex-direction: column;
   }
 
   .showinfo-thumb {
-    height: 100%;
-    object-fit: cover;
-    align-content: center;
-    border-radius: 0.8rem;
-    box-shadow: 0rem 2rem 5rem rgba(0, 0, 0, 0.2);
-    transition: all 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    float: left;
+    max-width: 100%;
+    min-height: 450px;
+    height: 5rem;
+    border-radius: 20px;
+    box-shadow: 0rem 2rem 5rem ${(props) => props.theme.shadow};
 
     @media (max-width: 976px) {
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      min-height: 300px;
+      margin: 0 auto;
     }
   }
 
@@ -56,26 +45,29 @@ export const StyledShowInfo = styled.div`
   }
 
   .showinfo-text {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 40px;
-    color: #fff;
+    color: #000;
     overflow: hidden;
 
     @media (max-width: 976px) {
       padding: 10px 10px;
-      background: rgb(0, 0, 0, 0.7);
       border-radius: 0.8rem;
       height: 100%;
       overflow-y: auto;
+      position: relative;
     }
 
     h1 {
-      font-family: 'Abel', sans-serif;
       font-size: 48px;
       margin: 0;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: ${(props) => props.theme.primaryDark};
 
       @media (max-width: 976px) {
-        font-size: 26px;
+        font-size: 25px;
       }
     }
 
@@ -83,27 +75,25 @@ export const StyledShowInfo = styled.div`
       font-size: 16px;
       line-height: 0;
       margin-top: 30px;
+      text-transform: uppercase;
+      color: ${(props) => props.theme.primary};
+
+      @media (max-width: 976px) {
+        display: inline;
+        font-size: 14px;
+      }
     }
 
     p {
-      font-family: 'Abel', sans-serif;
       font-size: 18px;
       line-height: 26px;
+      color: ${(props) => props.theme.linkColor};
 
       @media (max-width: 976px) {
         font-size: 13px;
-        line-height: 20px;
+        line-height: 23px;
         font-weight: 500;
       }
-    }
-  }
-
-  .rating-director {
-    display: flex;
-    justify-content: flex-start;
-
-    @media (max-width: 976px) {
-      display: none;
     }
   }
 
@@ -113,28 +103,15 @@ export const StyledShowInfo = styled.div`
     justify-content: center;
     width: 35px;
     height: 35px;
-    background: #fff;
+    background: #f5de50;
     color: #000;
     font-weight: 800;
     border-radius: 25px;
     margin: 0px 0 0 0;
 
     @media (max-width: 976px) {
-      display: none;
+      margin-top: 0.5rem;
     }
-  }
-
-  .director {
-    margin: 0 0 0 40px;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    min-height: 600px;
-    height: auto;
   }
 
   @keyframes animateShowinfo {

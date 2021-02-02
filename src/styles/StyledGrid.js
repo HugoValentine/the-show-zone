@@ -9,7 +9,6 @@ export const StyledGrid = styled.div`
   margin: 0 50px;
   padding: 0 20px;
   h1 {
-    font-family: Montserrat, sans-serif;
     font-size: 42px;
 
     @media only screen and (max-width: 768px) {
@@ -41,8 +40,8 @@ export const StyledGridContent = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  @media screen and (max-width: 3072px) {
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
   }
 
   @media screen and (max-width: 768px) {
