@@ -1,15 +1,6 @@
 import tmdbAPI from '../api/tmdb';
 import axios from 'axios';
 
-// Get single show
-// export const getMovie = (id) => {
-//   tmdbAPI.get(`/tv/${id}`, {
-//     params: {
-//       append_to_response: 'videos',
-//     },
-//   });
-// };
-
 export const getShow = () => {
   axios
     .get(

@@ -1,18 +1,15 @@
 import styled from 'styled-components';
-import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../config';
 
 export const StyledShowInfo = styled.div`
-  /* background: ${(props) =>
-    props.backdrop
-      ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${props.backdrop}')`
-      : '#fff'}; */
-  background-size: cover !important;
-  background-position: center !important;
   width: 100%;
+  max-width: 110rem;
   padding: 40px 20px;
   box-sizing: border-box;
   animation: animateShowinfo 1s;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 
   @media (max-width: 976px) {
     min-height: 250px;
@@ -21,7 +18,6 @@ export const StyledShowInfo = styled.div`
   }
 
   .showinfo-thumb {
-    max-width: 100%;
     min-height: 450px;
     height: 5rem;
     border-radius: 20px;
@@ -35,8 +31,8 @@ export const StyledShowInfo = styled.div`
 
   .image-container {
     display: none;
+
     @media (max-width: 976px) {
-      display: block;
       display: flex;
       justify-content: center;
       height: 5rem;
@@ -45,9 +41,10 @@ export const StyledShowInfo = styled.div`
   }
 
   .showinfo-text {
+    max-width: 60%;
+    width: 100%;
     padding: 40px;
     color: #000;
-    overflow: hidden;
 
     @media (max-width: 976px) {
       padding: 10px 10px;
@@ -55,6 +52,7 @@ export const StyledShowInfo = styled.div`
       height: 100%;
       overflow-y: auto;
       position: relative;
+      max-width: 100%;
     }
 
     h1 {
@@ -72,6 +70,7 @@ export const StyledShowInfo = styled.div`
     }
 
     h3 {
+      display: inline;
       font-size: 16px;
       line-height: 0;
       margin-top: 30px;
@@ -98,19 +97,17 @@ export const StyledShowInfo = styled.div`
   }
 
   .score {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background: #f5de50;
-    color: #000;
-    font-weight: 800;
+    display: inline;
+    color: #f5de50;
+    font-weight: 900;
     border-radius: 25px;
     margin: 0px 0 0 0;
+    padding-left: 0.5rem;
 
     @media (max-width: 976px) {
+      display: inline;
       margin-top: 0.5rem;
+      font-size: 15px;
     }
   }
 
@@ -122,6 +119,12 @@ export const StyledShowInfo = styled.div`
       opacity: 1;
     }
   }
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
 `;
 
 export const ShowImg = styled.img`

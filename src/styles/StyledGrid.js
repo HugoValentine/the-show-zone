@@ -25,7 +25,6 @@ export const StyledGridContent = styled.div`
   display: grid;
   grid-template-columns: repeat(5, minmax(10px, 1fr));
   grid-gap: 70px;
-  /* position: relative; */
 
   .grid-element {
     animation: animateGrid 0.5s;
@@ -40,8 +39,12 @@ export const StyledGridContent = styled.div`
     }
   }
 
-  @media screen and (max-width: 3072px) {
+  @media screen and (max-width: 1500px) {
     grid-template-columns: repeat(6, minmax(100px, 1fr));
+  }
+
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
   }
 
   @media screen and (max-width: 768px) {
@@ -51,8 +54,4 @@ export const StyledGridContent = styled.div`
   @media screen and (max-width: 600px) {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
-
-  /* @media screen and (max-width: 375px) {
-    grid-template-columns: repeat(1, 1fr);
-  } */
 `;

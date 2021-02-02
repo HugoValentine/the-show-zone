@@ -102,7 +102,6 @@ class Home extends React.Component {
 
     return (
       <>
-        <button onClick={this.fetchThis}>here</button>
         <SearchBar callback={this.searchShows} />
         <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
           {shows.map((show) => (

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
 import tmdbAPI from '../api/tmdb';
-// import axios from 'axios';
-// import { getTrailer } from '../actions/index';
 import NoImage from '../assets/nothing.svg';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
-import { StyledShowInfo, ShowImg } from '../styles/StyledShowInfo';
+import {
+  StyledShowInfo,
+  ShowImg,
+  ButtonsWrapper,
+} from '../styles/StyledShowInfo';
+import Button from './Button';
 
 const ShowInfo = ({ show }) => {
   const [modalOpened, setmodalOpened] = useState(false);
@@ -13,15 +16,14 @@ const ShowInfo = ({ show }) => {
   let [responseData, setResponseData] = useState('');
 
   useEffect(() => {
-    tmdbAPI
-      .get(`/tv/${show.id}/videos?`)
-      .then((response) => {
+    try {
+      tmdbAPI.get(`/tv/${show.id}/videos?`).then((response) => {
         setResponseData(response.data.results[0]);
         console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
       });
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   return (
@@ -42,23 +44,24 @@ const ShowInfo = ({ show }) => {
         <p>{show.overview}</p>
 
         <div>
-          <h3>IMDb Rating</h3>
+          <h3>IMDb Rating: </h3>
           <div className='score'>{show.vote_average}</div>
         </div>
-      </div>
-      <div onClick={() => setmodalOpened(true)}>
-        <button title='Trailer'>Play</button>
-      </div>
-      <div>
-        <h1>hey {responseData.name}</h1>
-      </div>
-      <div>
-        <ModalVideo
-          channel='youtube'
-          isOpen={modalOpened}
-          videoId={responseData.key}
-          onClose={() => setmodalOpened(false)}
-        />
+        <ButtonsWrapper>
+          <>
+            <div onClick={() => setmodalOpened(true)}>
+              <Button title='Trailer' icon='play' />
+            </div>
+            <ModalVideo
+              channel='youtube'
+              isOpen={modalOpened}
+              videoId={
+                typeof responseData === 'undefined' ? '' : responseData.key
+              }
+              onClose={() => setmodalOpened(false)}
+            />
+          </>
+        </ButtonsWrapper>
       </div>
     </StyledShowInfo>
   );

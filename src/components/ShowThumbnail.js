@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import LazyLoad from 'react-lazyload';
 import Rating from './Rating';
 
 import {
-  StyledShowThumbnail,
   DetailsWrapper,
   RatingsWrapper,
   Tooltip,

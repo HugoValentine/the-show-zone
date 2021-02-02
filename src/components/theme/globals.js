@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const Theme = {
   white: '#fff',
   ghostWhite: '#c6c6cc',
+  text: '#fafafa',
   primary: '#37474f',
   primaryDark: '#263238',
   linkColor: '#444444',
