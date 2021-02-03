@@ -19,4 +19,12 @@ export const StyledLoadMore = styled.button`
   :hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 976px) {
+    height: 50px;
+    font-size: 15px;
+    min-width: 200px;
+    background: ${(props) => props.theme.primary};
+    margin-top: 2rem;
+  }
 `;
