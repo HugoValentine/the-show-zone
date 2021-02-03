@@ -95,7 +95,6 @@ class Home extends React.Component {
       totalPages,
       loading,
       error,
-      selectedItem,
     } = this.state;
 
     if (error) return <div>Something went wrong...</div>;
@@ -103,7 +102,7 @@ class Home extends React.Component {
     return (
       <>
         <SearchBar callback={this.searchShows} />
-        <Grid header={searchTerm ? 'Search Result' : 'Popular Shows'}>
+        <Grid header={searchTerm ? 'Search Result' : 'Current Popular'}>
           {shows.map((show) => (
             <ShowThumbnail
               show={show}
